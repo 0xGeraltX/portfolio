@@ -9,6 +9,7 @@ const projects = [
     role: "Testnet Contributor",
     description: "Sui testnet participation, wallet testing and ecosystem tasks.",
     image: "/projects/sui.png",
+    website: "https://sui.io",
     twitter: "https://twitter.com/SuiNetwork"
   },
   {
@@ -16,6 +17,7 @@ const projects = [
     role: "Early User",
     description: "L2 interaction, bridge usage and governance exploration.",
     image: "/projects/arbitrum.png",
+    website: "https://arbitrum.io",
     twitter: "https://twitter.com/arbitrum"
   },
   {
@@ -23,6 +25,7 @@ const projects = [
     role: "Web3 Tester",
     description: "Optimism ecosystem testing and early adoption.",
     image: "/projects/optimism.png",
+    website: "https://optimism.io",
     twitter: "https://twitter.com/optimism"
   },
   {
@@ -30,12 +33,13 @@ const projects = [
     role: "NFT Contributor",
     description: "NFT minting, marketplace interaction and testing.",
     image: "/projects/spacerunner.png",
+    website: "https://spacerunners.com",
     twitter: "https://twitter.com/SpaceRunnerNFT"
   }
 ];
 
 export default function Projects() {
-  const [activeProject, setActiveProject] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
 
   return (
     <section id="projects" className="py-20">
@@ -49,7 +53,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              onClick={() => setActiveProject(project)}
+              onClick={() => setCurrentIndex(i)}
               className="cursor-pointer p-6 rounded-xl bg-white dark:bg-slate-700 shadow hover:scale-105 transition"
             >
               <h3 className="font-semibold">{project.name}</h3>
@@ -61,10 +65,15 @@ export default function Projects() {
         </div>
       </div>
 
-      <ProjectModal
-        project={activeProject}
-        onClose={() => setActiveProject(null)}
-      />
+      {currentIndex !== null && (
+        <ProjectModal
+          project={projects[currentIndex]}
+          projects={projects}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          onClose={() => setCurrentIndex(null)}
+        />
+      )}
     </section>
   );
 }
