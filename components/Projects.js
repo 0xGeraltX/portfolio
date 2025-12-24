@@ -7,32 +7,30 @@ const projects = [
   {
     name: "Sui",
     role: "Testnet Contributor",
-    description: "Participated in Sui testnet, wallet testing and ecosystem tasks."
+    description: "Sui testnet participation, wallet testing and ecosystem tasks.",
+    image: "/projects/sui.png",
+    twitter: "https://twitter.com/SuiNetwork"
   },
   {
     name: "Arbitrum",
     role: "Early User",
-    description: "L2 interaction, bridge usage and governance exploration."
+    description: "L2 interaction, bridge usage and governance exploration.",
+    image: "/projects/arbitrum.png",
+    twitter: "https://twitter.com/arbitrum"
   },
   {
     name: "Optimism",
     role: "Web3 Tester",
-    description: "Optimism ecosystem testing and early adoption."
-  },
-  {
-    name: "Aptos",
-    role: "Testnet Tester",
-    description: "Aptos testnet participation and feedback."
-  },
-  {
-    name: "Caldera",
-    role: "Ecosystem Contributor",
-    description: "Modular rollup ecosystem exploration."
+    description: "Optimism ecosystem testing and early adoption.",
+    image: "/projects/optimism.png",
+    twitter: "https://twitter.com/optimism"
   },
   {
     name: "Space Runner NFT",
     role: "NFT Contributor",
-    description: "NFT minting, marketplace interaction and testing."
+    description: "NFT minting, marketplace interaction and testing.",
+    image: "/projects/spacerunner.png",
+    twitter: "https://twitter.com/SpaceRunnerNFT"
   }
 ];
 
