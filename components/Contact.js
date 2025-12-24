@@ -1,0 +1,1 @@
+export default function Contact(){return(<section id='contact' className='p-10'><h2 className='text-2xl font-bold'>Contact</h2><p>Email: GeraltWeb3@gmail.com</p><p>Twitter: @0xGeraltX</p><p>Telegram: DevilBoy08</p></section>)}

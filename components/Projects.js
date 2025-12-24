@@ -1,0 +1,1 @@
+export default function Projects(){return(<section className='p-10'><h2 className='text-2xl font-bold'>Projects</h2><p className='mt-2'>Sui, Arbitrum, Optimism, Aptos, Caldera, Space Runner NFT</p></section>)}

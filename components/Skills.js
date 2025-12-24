@@ -1,0 +1,1 @@
+export default function Skills(){return(<section className='p-10'><h2 className='text-2xl font-bold'>Skills</h2><ul className='mt-4 list-disc list-inside'><li>DApps Testing</li><li>Smart Contract Deployment</li><li>Bug Bounty</li><li>NFT Deployment</li><li>Node Management</li><li>ICO / IDO / IEO Experience</li></ul></section>)}

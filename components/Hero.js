@@ -1,0 +1,1 @@
+export default function Hero(){return(<section className='h-screen flex flex-col justify-center items-center text-center'><h1 className='text-4xl font-bold'>Geralt | Web3</h1><p className='mt-4'>Web3 Developer • Airdrop Hunter • Testnet Tester</p></section>)}
