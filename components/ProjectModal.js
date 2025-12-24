@@ -2,17 +2,31 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function ProjectModal({ project, onClose }) {
+export default function ProjectModal({
+  project,
+  projects,
+  currentIndex,
+  setCurrentIndex,
+  onClose
+}) {
   if (!project) return null;
 
-  // ESC key close
+  // Keyboard controls
   useEffect(() => {
-    const handleEsc = (e) => {
+    const handleKey = (e) => {
       if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") {
+        setCurrentIndex((prev) => (prev + 1) % projects.length);
+      }
+      if (e.key === "ArrowLeft") {
+        setCurrentIndex((prev) =>
+          prev === 0 ? projects.length - 1 : prev - 1
+        );
+      }
     };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [onClose]);
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onClose, projects.length, setCurrentIndex]);
 
   return (
     <div
@@ -46,7 +60,16 @@ export default function ProjectModal({ project, onClose }) {
         </p>
 
         {/* Links */}
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-3">
+          {project.website && (
+            <a
+              href={project.website}
+              target="_blank"
+              className="px-4 py-2 rounded-lg bg-green-500 text-white text-sm"
+            >
+              Live Site
+            </a>
+          )}
           {project.github && (
             <a
               href={project.github}
@@ -67,12 +90,9 @@ export default function ProjectModal({ project, onClose }) {
           )}
         </div>
 
-        <button
-          onClick={onClose}
-          className="mt-6 w-full py-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
-        >
-          Close
-        </button>
+        <div className="mt-6 text-xs text-gray-400 text-center">
+          ⌨️ Use ← → arrows to navigate • ESC to close
+        </div>
       </motion.div>
     </div>
   );
