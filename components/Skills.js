@@ -33,3 +33,8 @@ export default function Skills() {
     </section>
   );
 }
+<section className="py-24">
+  <div className="container">
+    {/* content */}
+  </div>
+</section>
