@@ -7,7 +7,7 @@ export default function Contact() {
         <div className="space-y-2 text-gray-300">
           <p>Email: GeraltWeb3@gmail.com</p>
           <p>Twitter: @0xGeraltX</p>
-          <p>Telegram: DevilBoy08</p>
+          <p>Telegram: Blank</p>
         </div>
       </div>
     </section>
